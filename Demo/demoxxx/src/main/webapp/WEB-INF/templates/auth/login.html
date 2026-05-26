@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập Hệ Thống</title>
+    <!-- Nhúng font chữ từ Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Khai báo biến CSS để dễ dàng quản lý màu sắc */
+        :root {
+            --bg-start: #0f172a;       /* slate-900 */
+            --bg-mid: #1e1b4b;         /* indigo-950 */
+            --bg-end: #020617;         /* slate-950 */
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;     /* slate-400 */
+            --text-label: #cbd5e1;     /* slate-300 */
+            --input-bg: rgba(30, 41, 59, 0.5); /* slate-800 với opacity 50% */
+            --input-border: #334155;   /* slate-700 */
+            --primary-start: #6366f1;   /* indigo-500 */
+            --primary-end: #a855f7;     /* purple-600 */
+            --primary-hover-start: #4f46e5; /* indigo-600 */
+            --primary-hover-end: #9333ea;   /* purple-700 */
+            --accent: #818cf8;          /* indigo-400 */
+            --accent-hover: #a5b4fc;    /* indigo-300 */
+        }
+
+        /* Reset mặc định */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: radial-gradient(circle at top left, var(--bg-start), var(--bg-mid) 40%, var(--bg-end));
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        /* Container chính sử dụng Glassmorphism */
+        .login-card {
+            width: 100%;
+            max-width: 420px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 40px 32px;
+        }
+
+        /* Tiêu đề */
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Form */
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-label);
+            margin-bottom: 8px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 14px 16px;
+            background: var(--input-bg);
+            border: 1px solid var(--input-border);
+            border-radius: 12px;
+            color: var(--text-main);
+            font-size: 15px;
+            font-family: inherit;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            outline: none;
+        }
+
+        .input-field::placeholder {
+            color: #64748b; /* slate-500 */
+        }
+
+        /* Hiệu ứng focus vào ô nhập liệu */
+        .input-field:focus {
+            border-color: var(--primary-start);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+            background: rgba(30, 41, 59, 0.7);
+        }
+
+        /* Nút Submit */
+        .btn-submit {
+            width: 100%;
+            padding: 14px 16px;
+            background: linear-gradient(90deg, var(--primary-start), var(--primary-end));
+            border: none;
+            border-radius: 12px;
+            color: var(--text-main);
+            font-size: 16px;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.3);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 8px;
+        }
+
+        .btn-submit:hover {
+            background: linear-gradient(90deg, var(--primary-hover-start), var(--primary-hover-end));
+            box-shadow: 0 10px 25px -3px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-submit:active {
+            transform: scale(0.98);
+        }
+
+        /* Phần chuyển hướng Đăng ký */
+        .footer-text {
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-top: 24px;
+        }
+
+        .footer-text a {
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+            margin-left: 4px;
+            transition: color 0.15s ease, text-decoration 0.15s ease;
+        }
+
+        .footer-text a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Container chính -->
+<div class="login-card">
+
+    <!-- Tiêu đề -->
+    <div class="header">
+        <h1>Chào mừng trở lại</h1>
+        <p>Vui lòng đăng nhập vào tài khoản của bạn</p>
+    </div>
+
+    <p th:text="${errorMessage}"></p>
+    <!-- Form đăng nhập (Giữ nguyên toàn bộ logic code) -->
+    <form action="/auth/login" method="post">
+
+        <!-- Trường Username -->
+        <div class="form-group">
+            <label for="username">Username</label>
+            <div class="input-wrapper">
+                <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        required
+                        placeholder="Nhập tên đăng nhập"
+                        class="input-field"
+                >
+            </div>
+        </div>
+
+        <!-- Trường Password -->
+        <div class="form-group">
+            <label for="password">Password</label>
+            <div class="input-wrapper">
+                <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        required
+                        placeholder="••••••••"
+                        class="input-field"
+                >
+            </div>
+        </div>
+
+        <!-- Nút Đăng nhập -->
+        <input
+                type="submit"
+                value="Login"
+                class="btn-submit"
+        >
+
+        <!-- Khung chuyển hướng Đăng ký -->
+        <div class="footer-text">
+            Chưa có tài khoản?
+            <a href="auth/register">Register</a>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>
