@@ -16,6 +16,7 @@
     </style>
 </head>
 <body>
+    <a th:href="@{/users/add}">User add</a>
     <table>
         <tr>
             <td>Id</td>
@@ -25,7 +26,7 @@
         <tr th:each="user : ${listUsers}">
             <td th:text="${user.id}"></td>
             <td th:text="${user.name}"></td>
-            <td><a th:href="@{/users/delete/{id}(id=${user.id})}">Delete</a></td>
+            <td><a onclick="return confirm('M có chắc không ?')" th:href="@{/users/delete/{id}(id=${user.id})}">Delete</a></td>
         </tr>
     </table>
 </body>
