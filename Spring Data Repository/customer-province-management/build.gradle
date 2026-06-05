@@ -27,6 +27,12 @@ dependencies {
     implementation("org.springframework:spring-webmvc:6.2.18")
     // Source: https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf-spring6
     implementation("org.thymeleaf:thymeleaf-spring6:3.1.5.RELEASE")
+    implementation "org.hibernate.orm:hibernate-core:6.5.2.Final"
+    implementation "com.mysql:mysql-connector-j:8.4.0"
+    implementation("org.springframework.data:spring-data-jpa:3.4.2")
+    implementation "nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.1.0"
+    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0'
+    implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1' // Runtime implementation cho JSTL
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }

@@ -14,8 +14,8 @@ ext {
     junitVersion = '5.10.2'
 }
 
-sourceCompatibility = '17'
-targetCompatibility = '17'
+sourceCompatibility = '8'
+targetCompatibility = '8'
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
@@ -23,10 +23,7 @@ tasks.withType(JavaCompile) {
 
 dependencies {
     compileOnly('jakarta.servlet:jakarta.servlet-api:6.0.0')
-    // Source: https://mvnrepository.com/artifact/org.springframework/spring-webmvc
-    implementation("org.springframework:spring-webmvc:6.2.18")
-    // Source: https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf-spring6
-    implementation("org.thymeleaf:thymeleaf-spring6:3.1.5.RELEASE")
+
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }
