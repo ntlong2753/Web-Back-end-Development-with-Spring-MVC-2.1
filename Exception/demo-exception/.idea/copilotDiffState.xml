@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/src/main/resources/logback.xml">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/main/resources/logback.xml" />
+              <option name="updatedContent" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;configuration&gt;&#10;    &lt;!-- Configuration for console output --&gt;&#10;    &lt;appender name=&quot;CONSOLE&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;&#10;        &lt;encoder&gt;&#10;            &lt;pattern&gt;%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n&lt;/pattern&gt;&#10;            &lt;charset&gt;UTF-8&lt;/charset&gt;&#10;        &lt;/encoder&gt;&#10;    &lt;/appender&gt;&#10;&#10;    &lt;!-- Configuration for file output --&gt;&#10;    &lt;appender name=&quot;FILE&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;&#10;        &lt;file&gt;logs/application.log&lt;/file&gt;&#10;        &lt;encoder&gt;&#10;            &lt;pattern&gt;%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n&lt;/pattern&gt;&#10;            &lt;charset&gt;UTF-8&lt;/charset&gt;&#10;        &lt;/encoder&gt;&#10;        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy&quot;&gt;&#10;            &lt;fileNamePattern&gt;logs/application-%d{yyyy-MM-dd}.%i.log&lt;/fileNamePattern&gt;&#10;            &lt;maxFileSize&gt;10MB&lt;/maxFileSize&gt;&#10;            &lt;maxHistory&gt;30&lt;/maxHistory&gt;&#10;            &lt;totalSizeCap&gt;1GB&lt;/totalSizeCap&gt;&#10;        &lt;/rollingPolicy&gt;&#10;    &lt;/appender&gt;&#10;&#10;    &lt;!-- Logger for CMS Exception logging --&gt;&#10;    &lt;logger name=&quot;com.codegym.demoexception&quot; level=&quot;DEBUG&quot; additivity=&quot;false&quot;&gt;&#10;        &lt;appender-ref ref=&quot;CONSOLE&quot; /&gt;&#10;        &lt;appender-ref ref=&quot;FILE&quot; /&gt;&#10;    &lt;/logger&gt;&#10;&#10;    &lt;!-- Root logger configuration --&gt;&#10;    &lt;root level=&quot;INFO&quot;&gt;&#10;        &lt;appender-ref ref=&quot;CONSOLE&quot; /&gt;&#10;        &lt;appender-ref ref=&quot;FILE&quot; /&gt;&#10;    &lt;/root&gt;&#10;&lt;/configuration&gt;&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
