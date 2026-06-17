@@ -33,7 +33,7 @@ import java.util.Properties;
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement
-@ComponentScan(basePackages = "com.codegym")
+@ComponentScan(basePackages = "com.codegym.app")
 @EnableJpaRepositories("com.codegym.app.repository")
 @EnableAspectJAutoProxy
 public class AppConfiguration implements WebMvcConfigurer, ApplicationContextAware {
@@ -44,7 +44,7 @@ public class AppConfiguration implements WebMvcConfigurer, ApplicationContextAwa
         this.applicationContext = applicationContext;
     }
 
-/*    @Override
+/* ...    @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/css/**").addResourceLocations("/WEB-INF/css/");
     }*/
