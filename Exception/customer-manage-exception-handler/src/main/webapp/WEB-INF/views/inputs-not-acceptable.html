@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lỗi Dữ Liệu</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="container error-container">
+    <div class="error-icon">⚠️</div>
+    <h3 class="error-title">Dữ Liệu Không Hợp Lệ!</h3>
+    <p class="error-desc">
+        Email này đã được sử dụng hoặc định dạng nhập vào không hợp lệ. <br>
+        Vui lòng kiểm tra lại thông tin và thử lại!
+    </p>
+    <div class="form-actions" style="justify-content: center; margin-top: 20px;">
+        <a href="/customers" class="btn btn-submit">Quay lại danh sách</a>
+    </div>
+</div>
+</body>
+</html>

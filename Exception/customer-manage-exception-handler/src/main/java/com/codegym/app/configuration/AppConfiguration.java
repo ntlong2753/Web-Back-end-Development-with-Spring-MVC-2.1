@@ -11,6 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -20,6 +21,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.thymeleaf.spring6.SpringTemplateEngine;
 import org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver;
@@ -33,6 +35,7 @@ import java.util.Properties;
 @EnableWebMvc
 @EnableTransactionManagement
 @ComponentScan(basePackages = "com.codegym")
+@EnableJpaRepositories("com.codegym.app.repository")
 @EnableAspectJAutoProxy
 public class AppConfiguration implements WebMvcConfigurer, ApplicationContextAware {
     private ApplicationContext applicationContext;
@@ -40,6 +43,11 @@ public class AppConfiguration implements WebMvcConfigurer, ApplicationContextAwa
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) {
         this.applicationContext = applicationContext;
+    }
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/css/**").addResourceLocations("/WEB-INF/css/");
     }
 
     // thymeleaf

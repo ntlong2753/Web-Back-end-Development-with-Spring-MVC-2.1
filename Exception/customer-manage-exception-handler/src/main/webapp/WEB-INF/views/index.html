@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Khách Hàng</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+
+<div class="container">
+    <h3>Danh Sách Khách Hàng</h3>
+
+    <a href="/customers/create" class="btn btn-add">+ Thêm Khách Hàng Mới</a>
+
+    <div th:if="${success}" class="alert">
+        <span th:text="${success}"></span>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tên</th>
+            <th>Email</th>
+            <th>Thao Tác</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="customer : ${customers}">
+            <td th:text="${customer.id}"></td>
+            <td th:text="${customer.name}"></td>
+            <td th:text="${customer.email}"></td>
+            <td>
+                <a th:href="@{/customers/edit/{id}(id=${customer.id})}" class="action edit">Sửa</a>
+                <a th:href="@{/customers/delete/{id}(id=${customer.id})}"
+                   class="action delete"
+                   onclick="return confirm('Bạn có chắc chắn muốn xóa khách hàng này?');">Xóa</a>
+                <a th:href="@{/customers/view/{id}(id=${customer.id})}" class="action view">Xem</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p th:if="${#lists.isEmpty(customers)}" class="empty-state">Hiện chưa có khách hàng nào trong hệ thống.</p>
+</div>
+
+</body>
+</html>

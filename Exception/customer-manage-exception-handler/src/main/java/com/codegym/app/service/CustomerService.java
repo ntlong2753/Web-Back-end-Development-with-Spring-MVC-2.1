@@ -1,8 +1,8 @@
-package com.codegym.app.repository;
+package com.codegym.app.service;
 
 import com.codegym.app.exception.DuplicateEmailException;
 import com.codegym.app.model.Customer;
-import com.codegym.app.service.ICustomerService;
+import com.codegym.app.repository.ICustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
