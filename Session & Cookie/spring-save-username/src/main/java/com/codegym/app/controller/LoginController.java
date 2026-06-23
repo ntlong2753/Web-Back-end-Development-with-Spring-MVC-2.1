@@ -7,27 +7,26 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
-@SessionAttributes("user")
+@Controller // Đánh dấu đây là 1 controller
+@SessionAttributes("user") // Lưu session với key "user"
 public class LoginController {
 
-    @ModelAttribute("user")
+    @ModelAttribute("user") // Tạo ra 1 model user
     public User setupUser() {
         return new User();
     }
 
-    @GetMapping("/login")
+    @GetMapping("/login") // Map mapping với url /login
     public String showForm(@CookieValue(value = "rememberEmail", defaultValue = "") String rememberedEmail,
-                           Model model) {
-        Cookie cookie = new Cookie("rememberEmail", rememberedEmail);
-        model.addAttribute("emailRemembered", cookie.getValue());
+            Model model) {
+        model.addAttribute("emailRemembered", rememberedEmail);
         return "login";
     }
 
-    @PostMapping("/doLogin")
-    public String doLogin(@ModelAttribute("user") User user,
-                          Model model,
-                          HttpServletResponse response) {
+    @PostMapping("/doLogin") // Map mapping với url /doLogin
+    public String doLogin(@ModelAttribute("user") User user, // Lấy user từ model
+            Model model, // Model để thêm dữ liệu vào view
+            HttpServletResponse response) { // HttpServletResponse để thêm cookie
 
         if ("admin@gmail.com".equals(user.getEmail()) && "123456".equals(user.getPassword())) {
             Cookie cookie = new Cookie("rememberEmail", user.getEmail());

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Login with Cookie</title>
@@ -17,7 +18,7 @@
             background: white;
             padding: 30px 40px;
             border-radius: 8px;
-            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
             width: 350px;
         }
 
@@ -30,7 +31,8 @@
             font-weight: bold;
         }
 
-        input[type="text"], input[type="password"] {
+        input[type="text"],
+        input[type="password"] {
             width: 100%;
             padding: 10px;
             margin: 8px 0 16px;
@@ -59,25 +61,27 @@
         }
     </style>
 </head>
+
 <body>
-<div class="login-box">
-    <h2>Login</h2>
-    <form th:action="@{/doLogin}" th:object="${user}" method="post">
-        <div class="input-group">
-            <label for="email">Email</label>
-            <input type="text" id="email" name="email" th:value="${emailRemembered}"/>
-        </div>
-        <div class="input-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password"/>
-        </div>
+    <div class="login-box">
+        <h2>Login</h2>
+        <form th:action="@{/doLogin}" th:object="${user}" method="post">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" th:value="${emailRemembered}" />
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" />
+            </div>
 
-        <button type="submit">Login</button>
-    </form>
+            <button type="submit">Login</button>
+        </form>
 
-    <div class="message">
-        <p th:text="${message}"></p>
+        <div class="message">
+            <p th:text="${message}"></p>
+        </div>
     </div>
-</div>
 </body>
+
 </html>
