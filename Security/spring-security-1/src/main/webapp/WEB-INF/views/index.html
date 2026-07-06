@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Security Control Panel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/layout/index.css}">
+
+</head>
+<body>
+
+<div class="card">
+    <div class="card-header">
+        <h2>Spring Security</h2>
+        <h3>Welcome!</h3>
+    </div>
+
+    <!-- KHỐI ĐÃ ĐĂNG NHẬP -->
+    <div sec:authorize="isAuthenticated()" class="auth-status">
+        🔑 <strong>Đã đăng nhập:</strong> <span sec:authentication="principal.username"></span>
+    </div>
+
+    <!-- KHỐI CHƯA ĐĂNG NHẬP -->
+    <div sec:authorize="isAnonymous()">
+        <strong class="anonymous-header">Vui lòng đăng nhập</strong>
+        <div class="action-list">
+            <a th:href="@{/user}" class="btn btn-user">👤 Đăng nhập User</a>
+            <a th:href="@{/admin}" class="btn btn-admin">👨‍💼 Đăng nhập Admin</a>
+        </div>
+    </div>
+
+    <!-- KHỐI ĐIỀU HƯỚNG KHI ĐÃ AUTHENTICATED -->
+    <div sec:authorize="isAuthenticated()">
+        <div class="action-list">
+            <div sec:authorize="hasRole('USER')">
+                <a th:href="@{/user}" class="btn btn-user">👤 Trang User</a>
+            </div>
+            <div sec:authorize="hasRole('ADMIN')">
+                <a th:href="@{/admin}" class="btn btn-admin">👨‍💼 Trang Admin</a>
+            </div>
+            <a th:href="@{/logout}" class="btn btn-logout">🚪 Đăng xuất</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

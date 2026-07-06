@@ -1,0 +1,183 @@
+:root {
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    --primary-light: rgba(79, 70, 229, 0.1);
+    --danger: #ef4444;
+    --danger-bg: #fef2f2;
+    --danger-border: #fca5a5;
+    --danger-text: #991b1b;
+    --dark: #0f172a;
+    --dark-hover: #1e293b;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --inner-bg: rgba(248, 250, 252, 0.8);
+    --border-color: rgba(226, 232, 240, 0.8);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background: radial-gradient(circle at 10% 20%, rgb(242, 235, 243) 0%, rgb(228, 237, 246) 90.1%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Card Container tinh tế */
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    width: 100%;
+    max-width: 440px;
+    border-radius: 24px;
+    padding: 40px 32px;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05),
+    0 1px 3px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tiêu đề chính Dashboard */
+h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--dark);
+    letter-spacing: -0.5px;
+    text-align: center;
+    margin-bottom: 28px;
+    background: linear-gradient(135deg, #0f172a 0%, #4f46e5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Khu vực hiển thị thông tin User đã Authenticated */
+.welcome-section {
+    background: var(--inner-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 28px;
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+h3::before {
+    content: "✨";
+}
+
+/* Styling chi tiết cho các dòng dữ liệu */
+.welcome-section p {
+    font-size: 0.925rem;
+    color: var(--text-main);
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+}
+
+.welcome-section p:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.welcome-section p strong {
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+/* Tên đăng nhập nổi bật */
+.welcome-section p span {
+    background: var(--primary-light);
+    color: var(--primary);
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* Badge Vai trò USER */
+.welcome-section p:last-child {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Navigation Links Container */
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Styling các nút bấm */
+.nav-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+/* Nút Trang chủ */
+.nav-links a:first-child {
+    background: var(--primary);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+.nav-links a:first-child:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(79, 70, 229, 0.3);
+}
+
+/* Nút Đăng xuất */
+.nav-links a:last-child {
+    background: var(--danger-bg);
+    border: 1px solid var(--danger-border);
+    color: var(--danger-text);
+}
+
+.nav-links a:last-child:hover {
+    background: var(--danger);
+    color: #ffffff;
+    border-color: var(--danger);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.2);
+}
+
+/* Active styling cho trạng thái click */
+.nav-links a:active {
+    transform: translateY(0);
+}

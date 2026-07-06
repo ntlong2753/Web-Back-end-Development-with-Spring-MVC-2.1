@@ -2,16 +2,17 @@ package com.codegym.app.service;
 
 import com.codegym.app.model.Customer;
 import com.codegym.app.repository.ICustomerRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
 public class CustomerService implements ICustomerService {
+    private final ICustomerRepository iCustomerRepository;
 
-    @Autowired
-    private ICustomerRepository iCustomerRepository;
+    public CustomerService(ICustomerRepository iCustomerRepository) {
+        this.iCustomerRepository = iCustomerRepository;
+    }
 
     @Override
     public Iterable<Customer> findAll() {
@@ -32,4 +33,5 @@ public class CustomerService implements ICustomerService {
     public void remove(Long id) {
         iCustomerRepository.deleteById(id);
     }
+
 }

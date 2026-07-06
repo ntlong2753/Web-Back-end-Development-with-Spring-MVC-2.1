@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3a7c1765-3d88-4391-a7e6-5bd9c934f22f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../spring-sercutiry-1/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-sercutiry-1/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-sercutiry-1/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-sercutiry-1/src/main/java/com/codegym/app/configuration/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-sercutiry-1/src/main/java/com/codegym/app/configuration/AppInit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codegym/app/configuration/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codegym/app/configuration/AppInit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codegym/app/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Session &amp; Cookie/spring-save-username/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Session &amp; Cookie/spring-save-username/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Session &amp; Cookie/spring-save-username/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Web Service và RESTful/spring-customer-management-restful/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Web Service và RESTful/spring-customer-management-restful/src/main/java/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Session &amp; Cookie/spring-save-username/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Session &amp; Cookie/spring-save-username/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Web Service và RESTful/spring-customer-management-restful/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Web Service và RESTful/spring-customer-management-restful/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Web Service và RESTful/spring-customer-management-restful/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Web Service và RESTful/spring-customer-management-restful/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Web Service và RESTful/spring-customer-management-restful/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Web Service và RESTful/spring-customer-management-restful/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../Web Service và RESTful/spring-customer-management-restful/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Web Service và RESTful/spring-customer-management-restful/src/main/java/com/codegym/app/configuration/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Web Service và RESTful/spring-customer-management-restful/src/main/java/com/codegym/app/configuration/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Web Service và RESTful/spring-customer-management-restful/src/main/java/com/codegym/app/configuration/AppInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Web Service và RESTful/spring-customer-management-restful/src/main/java/com/codegym/app/configuration/AppInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Web Service và RESTful/spring-customer-management-restful/src/main/java/com/codegym/app/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Web Service và RESTful/spring-customer-management-restful/src/main/java/com/codegym/app/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Web Service và RESTful/spring-customer-management-restful/src/main/java/com/codegym/app/service/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Web Service và RESTful/spring-customer-management-restful/src/main/java/com/codegym/app/service/ICustomerService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="3Fq0GMBV4n6ljJt3KKM483Y8wPW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Du_lieu/CodeGym/Module_4/Web Back-end Development with Spring MVC 2.1/JPA/static-query/src/main/java/com/codegym/app&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Du_lieu\CodeGym\Module_4\Web Back-end Development with Spring MVC 2.1\JPA\static-query\src\main\java\com\codegym\app" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 10.1.53" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.53" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment>
+        <artifact name="Gradle : com.codegym : app-1.0-SNAPSHOT.war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/Gradle___com_codegym___app_1_0_SNAPSHOT_war" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings />
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Gradle : com.codegym : app-1.0-SNAPSHOT.war" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.25134.95" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3a7c1765-3d88-4391-a7e6-5bd9c934f22f" name="Changes" comment="" />
+      <created>1782787196648</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1782787196648</updated>
+      <workItem from="1782787197743" duration="1954000" />
+      <workItem from="1782889225577" duration="201000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <!-- Nhúng font chữ Plus Jakarta Sans cao cấp -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/layout/user.css}">
+
+</head>
+<body>
+
+<div class="card">
+    <h2>👤 User Dashboard</h2>
+
+    <!-- KHỐI ĐÃ ĐĂNG NHẬP -->
+    <div sec:authorize="isAuthenticated()" class="welcome-section">
+        <h3>Chào mừng!</h3>
+        <p><strong>Tên đăng nhập:</strong> <span sec:authentication="principal.username"></span></p>
+        <p><strong>Vai trò:</strong> USER</p>
+    </div>
+
+    <!-- KHỐI ĐIỀU HƯỚNG -->
+    <div class="nav-links">
+        <a th:href="@{/}">🏠 Trang chủ</a>
+        <a th:href="@{/logout}">🚪 Đăng xuất</a>
+    </div>
+</div>
+
+</body>
+</html>
