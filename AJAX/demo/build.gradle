@@ -22,6 +22,7 @@ tasks.withType(JavaCompile) {
 }
 
 dependencies {
+
     compileOnly('jakarta.servlet:jakarta.servlet-api:6.0.0')
 
     // Source: https://mvnrepository.com/artifact/org.springframework/spring-webmvc
@@ -33,7 +34,6 @@ dependencies {
     // Source: https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator
     implementation("org.hibernate.validator:hibernate-validator:8.0.1.Final")
 
-    // Spring Framework 6.x for Jakarta EE
     implementation 'org.springframework:spring-aspects:6.1.6'
 
     implementation "org.hibernate.orm:hibernate-core:6.5.2.Final"
@@ -41,19 +41,14 @@ dependencies {
     implementation("org.springframework.data:spring-data-jpa:3.4.2")
     implementation "nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.1.0"
     implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0'
+    implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1' // Runtime implementation cho JSTL
+
+    // Jackson for JSON processing
+    implementation "com.fasterxml.jackson.core:jackson-databind:2.17.2"
+    compileOnly "jakarta.servlet:jakarta.servlet-api:6.0.0"
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
-
-    // Thymeleaf 3.1+ for Spring 6 and Jakarta EE
-    implementation "org.thymeleaf:thymeleaf-spring6:3.1.5.RELEASE"
-    implementation "nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.3.0"
-    implementation "org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.2.RELEASE"
-
-    // Spring Security 6.x for Jakarta EE
-    implementation "org.springframework.security:spring-security-web:6.2.1"
-    implementation "org.springframework.security:spring-security-config:6.2.1"
-    implementation "org.springframework.security:spring-security-taglibs:6.2.1"
 }
 
 test {
