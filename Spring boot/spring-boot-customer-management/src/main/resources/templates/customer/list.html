@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer List</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #4158D0, #C850C0, #FFCC70, #4facfe);
+            background-size: 300% 300%;
+            animation: gradientBG 10s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Căn trên cùng thay vì giữa để bảng dài không bị cắt */
+            min-height: 100vh;
+            padding: 60px 20px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            max-width: 900px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container > a:first-child {
+            align-self: flex-start;
+            display: inline-block;
+            background: linear-gradient(90deg, #4158D0 0%, #C850C0 100%);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 12px 24px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(200, 80, 192, 0.3);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .container > a:first-child:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(200, 80, 192, 0.4);
+            background: linear-gradient(90deg, #374bb3 0%, #b043a8 100%);
+        }
+
+        .container > a:first-child:active {
+            transform: translateY(1px);
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            background: linear-gradient(to right, #4158D0, #C850C0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        th, td {
+            padding: 18px 24px;
+            text-align: left;
+        }
+
+        th {
+            background: rgba(65, 88, 208, 0.05);
+            color: #4158D0;
+            font-weight: 700;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid rgba(65, 88, 208, 0.1);
+        }
+
+        tr {
+            transition: all 0.3s ease;
+        }
+
+        tr:not(:last-child) td {
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        tr:hover {
+            background-color: #f8fafc;
+            transform: scale(1.005);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            position: relative;
+            z-index: 10;
+            border-radius: 12px;
+        }
+
+        td {
+            color: #334155;
+            font-weight: 500;
+            font-size: 15px;
+            vertical-align: middle;
+        }
+
+        td div {
+            display: flex;
+            gap: 12px;
+        }
+
+        td div a {
+            text-decoration: none;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #f1f5f9;
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        td div a:hover {
+            transform: scale(1.2) translateY(-2px);
+            background: #ffffff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Customize shadow color slightly based on action for extra flare */
+        td div a[href*="update"]:hover {
+            box-shadow: 0 5px 15px rgba(65, 88, 208, 0.25);
+        }
+
+        td div a[href*="delete"]:hover {
+            box-shadow: 0 5px 15px rgba(220, 53, 69, 0.25);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="/customers/create">+ Create New Customer</a>
+    <h1>Customers</h1>
+    <table>
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Actions</th>
+        </tr>
+        <th:block th:each="customer : ${customers}">
+            <tr>
+                <td th:text="${customer.firstName}"></td>
+                <td th:text="${customer.lastName}"></td>
+                <td>
+                    <div>
+                        <a th:href="@{/customers/update/__${customer.id}__}">✏️</a>
+                        <a th:href="@{/customers/delete/__${customer.id}__}">🗑️</a>
+                    </div>
+                </td>
+            </tr>
+        </th:block>
+    </table>
+</div>
+</body>
+</html>
